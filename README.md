@@ -1,4 +1,4 @@
-# Fullstack Bootstrap CLI
+# FullStaCLI
 
 A CLI tool to bootstrap full-stack applications.
 
@@ -51,7 +51,7 @@ It'll only works if Erlang VM is installed on your machine!
 To create a new full-stack project, run the following command:
 
 ```bash
-./fullstack_bootstrap <project-folder> [ControllerName]
+./fullstacli <project-folder> [ControllerName]
 ```
 
 - `<project-folder>`: The name of the directory where the project will be created.
@@ -60,7 +60,7 @@ To create a new full-stack project, run the following command:
 ### Example
 
 ```bash
-./fullstack_bootstrap my-awesome-app Users
+./fullstacli my-awesome-app Users
 ```
 
 This will create a new directory named `my-awesome-app` with a NestJS backend and an Angular frontend, including a `UsersController` and related files.
