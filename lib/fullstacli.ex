@@ -98,7 +98,7 @@ defp setup_frontend(folder, controller) do
   cd #{folder} &&
   ng new frontend --minimal --skip-git --standalone --skip-tests --inline-template false --inline-style --defaults --routing=false &&
   cd frontend &&
-  npm install -D tailwindcss postcss autoprefixer --force &&
+  npm install -D tailwindcss postcss autoprefixer @tailwindcss/postcss --force &&
   npm install primeng@19 @primeng/themes@19 primeicons --force
   """
 
@@ -158,8 +158,8 @@ defp write_backend_files(folder, controller) do
 
   File.write!("#{folder}/backend/src/app.module.ts", """
   import { Module } from "@nestjs/common";
-  import { #{controller_cap}Controller } from "./#{controller}.controller";
-  import { #{controller_cap}Service } from "./#{controller}.service";
+  import { #{controller_cap}Controller } from "./#{controller}/#{controller}.controller";
+  import { #{controller_cap}Service } from "./#{controller}/#{controller}.service";
   import { PrismaService } from "./prisma.service";
 
   @Module({
