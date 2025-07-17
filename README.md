@@ -63,11 +63,11 @@ To create a new full-stack project, run the following command:
 ./fullstacli my-awesome-app Users
 ```
 
+This will create a new directory named `my-awesome-app` with a NestJS backend and an Angular frontend, including a `UsersController` and related files.
+
 ### Purpose
 
 I created this tool to optimize productivity in tests with short execution times, so you can focus more on business logic rather than the tool itself.
-
-This will create a new directory named `my-awesome-app` with a NestJS backend and an Angular frontend, including a `UsersController` and related files.
 
 ## License
 
