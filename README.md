@@ -1,21 +1,70 @@
-# FullstackBootstrap
+# Fullstack Bootstrap CLI
 
-**TODO: Add description**
+A CLI tool to bootstrap full-stack applications.
+
+This tool generates a minimal project structure for a modern web application, including a backend with NestJS and a frontend with Angular.
+
+## Todo
+
+- Add option to different frameworks
+- Deep options for each framework
+- Distribute an .exe instead of shell to avoid the need for the Erlang VM.
+
+## Features
+
+- **Backend:**
+  - NestJS
+  - Prisma with SQLite
+- **Frontend:**
+  - Angular 19
+  - Tailwind CSS
+  - PrimeNG
+
+## Easy usage for Elixir community
+
+Just download the [FullStacli](/fullstacli) shell script, and [use it!](#usage)
+
+### Disclaimer 🚫
+
+It'll only works if Erlang VM is installed on your machine!
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `fullstack_bootstrap` to your list of dependencies in `mix.exs`:
+1.  **Clone the repository:**
 
-```elixir
-def deps do
-  [
-    {:fullstack_bootstrap, "~> 0.1.0"}
-  ]
-end
+    ```bash
+    git clone https://github.com/nsx07/fullstacli
+    cd fullstacli
+    ```
+
+2.  **Install dependencies:**
+
+    This tool requires npm, Angular CLI, NestJS CLI and Elixir to be installed on your system.
+
+3.  **Compile the application:**
+    ```bash
+    mix escript.build
+    ```
+
+## Usage
+
+To create a new full-stack project, run the following command:
+
+```bash
+./fullstack_bootstrap <project-folder> [ControllerName]
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/fullstack_bootstrap>.
+- `<project-folder>`: The name of the directory where the project will be created.
+- `[ControllerName]` (optional): The name of the main controller for your application. If not provided, it defaults to `Hello`.
 
+### Example
+
+```bash
+./fullstack_bootstrap my-awesome-app Users
+```
+
+This will create a new directory named `my-awesome-app` with a NestJS backend and an Angular frontend, including a `UsersController` and related files.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

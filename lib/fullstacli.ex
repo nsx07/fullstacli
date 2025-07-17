@@ -1,5 +1,6 @@
-defmodule FullstackBootstrap do
+defmodule FullStacli do
   def main(args) do
+    validate_deps()
     {folder, controller} = parse_args(args)
 
     IO.puts("🚀 Bootstrapping fullstack project into: #{folder}")
@@ -12,6 +13,23 @@ defmodule FullstackBootstrap do
     |> Enum.map(&Task.await(&1, 60_000 * 10))
 
     IO.puts("✅ Project '#{folder}' bootstrapped successfully!")
+  end
+
+  defp validate_deps() do
+    IO.puts("🔎 Checking for dependencies...")
+
+    ["node -v", "npm -v", "ng version", "nest --version"]
+    |> Enum.each(fn cmd ->
+      {output, exit_code} = System.cmd("bash", ["-c", cmd], stderr_to_stdout: true)
+
+      if exit_code != 0 do
+        IO.puts("❌ Dependency check failed: `#{cmd}`")
+        IO.puts(output)
+        System.halt(1)
+      else
+        IO.puts("✅ #{cmd} found")
+      end
+    end)
   end
 
   defp parse_args([folder_name, controller_name]) do
